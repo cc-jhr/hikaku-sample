@@ -17,7 +17,7 @@ class SpecificationMatchesImplementationTest {
     lateinit var springContext: ApplicationContext
 
     @Test
-    fun `compare specification and implementation`() {
+    fun `specification matches implementation`() {
         Hikaku(
                 specification = OpenApiConverter(Paths.get(this::class.java.classLoader.getResource("openapi.json").toURI())),
                 implementation = SpringConverter(springContext),
