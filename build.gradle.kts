@@ -35,3 +35,7 @@ dependencies {
 application {
     mainClassName = "de.codecentric.hikaku.sample.AppKt"
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
