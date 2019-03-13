@@ -2,8 +2,8 @@ package de.codecentric.hikaku.sample
 
 import de.codecentric.hikaku.Hikaku
 import de.codecentric.hikaku.HikakuConfig
-import de.codecentric.hikaku.converter.openapi.OpenApiConverter
-import de.codecentric.hikaku.converter.spring.SpringConverter
+import de.codecentric.hikaku.converters.openapi.OpenApiConverter
+import de.codecentric.hikaku.converters.spring.SpringConverter
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest

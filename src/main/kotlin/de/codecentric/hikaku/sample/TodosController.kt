@@ -10,7 +10,6 @@ data class Todo(val text: String = "")
 class TodosController {
 
     @RequestMapping(method = [GET])
-    @ResponseBody
     fun fetchAllTodos() = listOf(Todo())
 
     @RequestMapping(method = [POST])
@@ -20,6 +19,5 @@ class TodosController {
     fun deleteTodo(@PathVariable("id") todoIdentifier: String) { }
 
     @RequestMapping("/{id}", method = [GET])
-    @ResponseBody
     fun fetchTodo(@PathVariable("id") todoIdentifier: String) = Todo()
 }
