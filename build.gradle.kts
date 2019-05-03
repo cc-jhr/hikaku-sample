@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.kotlin.jvm").version("1.3.21")
+    id("org.jetbrains.kotlin.jvm").version("1.3.31")
     application
 }
 
@@ -21,15 +21,15 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.31")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.1.4.RELEASE")
 
-    testImplementation("de.codecentric.hikaku:hikaku-openapi:2.1.0")
-    testImplementation("de.codecentric.hikaku:hikaku-spring:2.1.0")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.1.3.RELEASE")
-    testImplementation("org.junit.platform:junit-platform-launcher:1.4.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.4.0")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.21")
+    testImplementation("de.codecentric.hikaku:hikaku-openapi:2.2.0")
+    testImplementation("de.codecentric.hikaku:hikaku-spring:2.2.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.4.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.4.2")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.31")
 }
 
 application {
