@@ -12,7 +12,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -28,7 +28,7 @@
         "description": "",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Todo"
               }
@@ -60,7 +60,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Todo"
                 }

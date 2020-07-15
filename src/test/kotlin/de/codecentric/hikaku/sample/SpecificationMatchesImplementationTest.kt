@@ -4,6 +4,7 @@ import de.codecentric.hikaku.Hikaku
 import de.codecentric.hikaku.HikakuConfig
 import de.codecentric.hikaku.converters.openapi.OpenApiConverter
 import de.codecentric.hikaku.converters.spring.SpringConverter
+import de.codecentric.hikaku.endpoints.HttpMethod.*
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -19,12 +20,14 @@ class SpecificationMatchesImplementationTest {
     @Test
     fun `specification matches implementation`() {
         Hikaku(
-                specification = OpenApiConverter(Paths.get(this::class.java.classLoader.getResource("openapi.json").toURI())),
+                specification = OpenApiConverter(Paths.get(this::class.java.classLoader.getResource("openapi.json")!!.toURI())),
                 implementation = SpringConverter(springContext),
                 config = HikakuConfig(
-                        ignorePaths = setOf(SpringConverter.IGNORE_ERROR_ENDPOINT),
-                        ignoreHttpMethodOptions = true,
-                        ignoreHttpMethodHead = true
+                        filters = listOf(
+                            SpringConverter.IGNORE_ERROR_ENDPOINT,
+                            { endpoint -> endpoint.httpMethod == HEAD },
+                            { endpoint -> endpoint.httpMethod == OPTIONS }
+                        )
                 )
         )
         .match()
